@@ -1,3 +1,4 @@
+
 {
   "short_name": "Irangram",
   "name": "Irangram Messenger",
@@ -13,7 +14,8 @@
       "sizes": "512x512"
     }
   ],
-  "start_url": ".",
+  "start_url": "./",
+  "scope": ".",
   "display": "standalone",
   "theme_color": "#3390ec",
   "background_color": "#ffffff"
