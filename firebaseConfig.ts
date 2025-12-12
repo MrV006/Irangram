@@ -2,6 +2,8 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
+import { getAuth, setPersistence, browserLocalPersistence } from "firebase/auth";
+import { getStorage } from "firebase/storage";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
@@ -17,13 +19,30 @@ const firebaseConfig = {
 // Initialize Firebase
 let app;
 let db: any = null;
+let auth: any = null;
+let storage: any = null;
 
 try {
     app = initializeApp(firebaseConfig);
     db = getFirestore(app);
+    auth = getAuth(app);
+    
+    // Initialize Storage separately to prevent app crash if service is disabled/unavailable
+    try {
+        storage = getStorage(app);
+    } catch (storageError) {
+        console.warn("Firebase Storage not available. File uploads will be disabled.", storageError);
+        storage = null;
+    }
+    
+    // Explicitly set persistence to LOCAL (persists even after window close)
+    setPersistence(auth, browserLocalPersistence).catch((error) => {
+        console.error("Firebase Persistence Error:", error);
+    });
+
     console.log("Firebase Connected Successfully");
 } catch (error) {
     console.error("Firebase Initialization Error:", error);
 }
 
-export { db };
+export { db, auth, storage };

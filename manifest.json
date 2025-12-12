@@ -1,6 +1,7 @@
+
 {
-  "short_name": "Gemigram",
-  "name": "Gemigram Messenger",
+  "short_name": "Irangram",
+  "name": "Irangram Messenger",
   "icons": [
     {
       "src": "https://cdn-icons-png.flaticon.com/512/2111/2111615.png",
@@ -13,7 +14,8 @@
       "sizes": "512x512"
     }
   ],
-  "start_url": ".",
+  "start_url": "./",
+  "scope": ".",
   "display": "standalone",
   "theme_color": "#3390ec",
   "background_color": "#ffffff"

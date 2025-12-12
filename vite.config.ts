@@ -1,11 +1,12 @@
+
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
-  // IMPORTANT: Change '/gemigram/' to your repository name if deploying to GitHub Pages
-  // Example: If your repo is https://github.com/username/my-app, set base to '/my-app/'
+  // IMPORTANT: We use './' (relative path) so assets load correctly 
+  // both on https://mrv006.github.io/Irangram/ AND on the Worker URL.
   base: './', 
   build: {
     outDir: 'dist',

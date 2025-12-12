@@ -6,7 +6,7 @@
  */
 
 export const CONFIG = {
-  // Toggle this to switch between Gemini Direct API (Client-side) and Real Server
+  // Toggle this to switch between Local Mock and Real Server
   USE_REAL_SERVER: false, 
 
   // Your Backend URL (e.g., http://localhost:5000 or https://api.mydomain.com)
@@ -15,12 +15,13 @@ export const CONFIG = {
   // Socket URL for real-time features
   SOCKET_URL: process.env.REACT_APP_SOCKET_URL || 'http://localhost:5000',
 
-  // Gemini API Key (Only used if USE_REAL_SERVER is false)
-  GEMINI_API_KEY: process.env.API_KEY,
-  
   // App Info
-  APP_NAME: 'گمی‌گرام',
-  VERSION: '1.6.0'
+  APP_NAME: 'ایران‌گرام',
+  VERSION: '1.8.0',
+  
+  // SUPER ADMIN EMAILS
+  OWNER_EMAIL: 'amirrezaveisi45@gmail.com',
+  DEVELOPER_EMAIL: 'developer.irangram@gmail.com'
 };
 
 export const ENDPOINTS = {
